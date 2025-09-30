@@ -4,9 +4,11 @@ combinos is a game that's like tetris, but it uses all possible polyminos from m
 
 ive tried to make the game logic as similar to the original combinos, but feel free to give me feedback if youd like changes!
 
-## important note about controls
+## IMPORTANT NOTE ABOUT CONTROLS
 
-i didnt make ui for control changes (because im lazy). if you want to change the controls, use something like below:
+i didnt make ui for control changes (because im lazy). 
+
+if you want to change the controls, **modify the code below to your own needs and paste into dev console:** (you only need to do this once)
 
 ```js
 const myKeys = {

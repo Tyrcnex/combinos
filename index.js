@@ -48,7 +48,9 @@ function drawGame(board, queue, hold, done = false, stats) {
     ctx.textBaseline = 'middle';
     ctx.textAlign = 'right';
     ctx.fillText(`Score: ${stats.score}`, 120, 200);
-    ctx.fillText(`Combo: ${stats.combo}`, 120, 300);
+    ctx.fillText(`Pieces: ${stats.piecesPlaced}`, 120, 300);
+    ctx.fillText(`Lines: ${stats.linesCleared}`, 120, 350);
+    ctx.fillText(`Combo: ${stats.combo}`, 120, 400);
 }
 
 // for debugging purposes
@@ -63,6 +65,7 @@ function playGame(st) {
         piecesGenerated: 7,
         score: 0,
         combo: 0,
+        linesCleared: 0
     }
 
     for (i = stats.piecesPlaced; i < stats.piecesGenerated; i++) {
@@ -96,6 +99,7 @@ function playGame(st) {
             if (linesCleared > 0) {
                 stats.score += linesCleared * linesCleared + stats.combo;
                 stats.combo += 1;
+                stats.linesCleared += linesCleared;
             } else {
                 stats.combo = 0;
             }
